@@ -1,0 +1,18 @@
+class Solution {
+public:
+    bool isFascinating(int n) {
+        string a= to_string(n)+to_string(2*n)+to_string(3*n);
+        // sort(a.begin(),a.end());
+        cout<<a<<" ";
+        vector<int>arr(10,0);
+        for(int i=0;i<a.size();i++){
+            int num=(int)(a[i])-'0';
+            cout<<num<<" "; 
+            arr[num]++;
+        }
+        for(int i=0;i<10;i++){
+            if((i==0 and arr[i]!=0)||(i!=0 and (arr[i]==0 ||arr[i]>1 )) )return false;
+        }
+        return true;
+    }
+};
